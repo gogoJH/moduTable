@@ -26,7 +26,7 @@ class SignUp extends React.Component {
     var flag = [];
 
     document.getElementById("Emailalreadywarning").style.display = "none";
-    flag.push(this.checkEmpty("firstName"));
+    flag.push(this.checkEmpty("firstName")); // ????
     flag.push(this.checkEmpty("lastName"));
     flag.push(this.checkEmpty("city"));
     flag.push(this.checkEmpty("Email"));
@@ -79,6 +79,7 @@ class SignUp extends React.Component {
       margin: "16px 0",
       color: "white"
     };
+    // feel like very similar to login component?
     return (
       <Drawer
         className={this.props.visible ? "signUp" : "signUp signUp-close"}

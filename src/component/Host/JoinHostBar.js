@@ -3,6 +3,7 @@ import { Checkbox, Button } from "antd";
 import "./JoinHostBar.css";
 
 export default function JoinHostBar() {
+  // you have so many checkbox component... use map
   return (
     <div className="box JoinHostBar-container">
       <div id="JoinHostBar-check" style={{ margin: "auto" }}>

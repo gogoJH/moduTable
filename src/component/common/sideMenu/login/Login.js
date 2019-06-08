@@ -50,6 +50,7 @@ export default class Login extends React.Component {
       });
   };
   checkEmpty = kind => {
+    // can we handle this using state not direct access to document style
     if (this.state[kind] === "") {
       document.getElementById(kind + "warning").style.display = "block";
       return false;
@@ -60,7 +61,7 @@ export default class Login extends React.Component {
   };
   render() {
     const fbStyle = {
-      background: "rgb(72,103,173)"
+      background: "rgb(72,103,173)" // take this out as module so that we can reuse or update easily
     };
     const googleStyle = {
       background: "rgb(78,133,236)",
@@ -84,8 +85,9 @@ export default class Login extends React.Component {
             <div className="top">
               <h3>Welcome back!</h3>
             </div>
-
+            {/* handle uri dynamically */}
             <a href="http://localhost:3001/auth/facebook" className="login-units">
+              {/* make a button reusable component please*/ }
               <button className="sotialButton" style={fbStyle}>
                 <img src={fblogo} style={{ width: "20px", float: "left" }} alt={"facebookLogo"} />
                 Log in with Facebook
@@ -161,6 +163,7 @@ export default class Login extends React.Component {
     );
   }
 }
+// take this out as utility function
 function checkEmail(str) {
   var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 

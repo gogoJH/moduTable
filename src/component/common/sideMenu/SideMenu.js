@@ -37,6 +37,7 @@ export default function SideMenu(props) {
           />
         )}
       </Drawer>
+      {/* handle the following components with only visibilty css? hmm..*/}
       <Login onClick={_loginOnClick} visible={loginVisible} />
       <SignUp onClick={_signUpOnClick} visible={signUpVisible} />
     </>

@@ -13,6 +13,7 @@ class App extends Component {
         <Route exact path="/" component={Main} />
         <Route path="/search" component={Events} />
         <Route path="/Event/:id" component={Event} />
+        {/* normally we do not use capital for route path */}
         <Route path="/Account" component={Account} />
         <Route path="/CreatEvent" component={CreatEvent} />
       </Router>

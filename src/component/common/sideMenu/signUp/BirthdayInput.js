@@ -5,7 +5,7 @@ export default class BirthdayInput extends Component {
     this.props.selectDate(this.props.kind, value);
     console.log(`selected ${value}`);
   };
-
+  // what is this component?
   render() {
     const { Option } = Select;
     const optionValues = [];

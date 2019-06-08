@@ -19,7 +19,7 @@ export default function Connect(props) {
       </div>
       <div>
         <Button className="SideMenu-Button" onClick={() => {}}>
-          Be Come Host
+          Become Host
         </Button>
       </div>
     </>
