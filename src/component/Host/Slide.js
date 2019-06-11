@@ -3,6 +3,7 @@ import "./Slide.css";
 import Slider from "react-slick";
 
 export default function Slide() {
+  // check: is it necessary to hold all img files?
   const a = require("../../img/1.jpeg");
   const b = require("../../img/2.jpeg");
   const c = require("../../img/3.jpeg");

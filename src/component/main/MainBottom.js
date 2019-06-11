@@ -6,6 +6,7 @@ import AutoInput from "../../component/common/header/AutoInput";
 import Axios from "axios";
 
 export default withRouter(function MainBottom(props) {
+  // should we do this? can we do this at the bottom
   const city = useRef("");
   const date = useRef({});
   const guests = useRef("");
@@ -25,22 +26,33 @@ export default withRouter(function MainBottom(props) {
   const _onClick = e => {
     console.log(city);
     props.history.push(
-      `/search?query=${city.current}&date=${date.current}&guests=${guests.current}`
+      `/search?query=${city.current}&date=${date.current}&guests=${
+        guests.current
+      }`
     );
   };
 
   return (
     <div id="Bottom-body">
-      <h3 className="Bottom-searchBar" style={{ fontWeight: "bold", textAlign: "left" }}>
+      <h3
+        className="Bottom-searchBar"
+        style={{ fontWeight: "bold", textAlign: "left" }}
+      >
         What are you looking for?
       </h3>
 
       <div className="Bottom-searchBar">
+        {" "}
+        {/* maybe we could put this css inside AutoInput? */}
         <AutoInput onChange={_setCity} city={city} />
       </div>
 
       <div className="Bottom-searchBar">
-        <DatePicker onChange={_setDate} className="Bottom-searchBarUnit" size="large" />
+        <DatePicker
+          onChange={_setDate}
+          className="Bottom-searchBarUnit"
+          size="large"
+        />
       </div>
 
       <div className="Bottom-searchBar">
@@ -52,6 +64,7 @@ export default withRouter(function MainBottom(props) {
             icon={<Icon type="user" />}
             defaultValue="Guests"
           >
+            {/* can we map this? */}
             <Option value="1">
               <Icon type="user" /> Guest 1
             </Option>
@@ -72,7 +85,11 @@ export default withRouter(function MainBottom(props) {
       </div>
 
       <div className="Bottom-searchBar">
-        <Button onClick={_onClick} className="Bottom-searchBarUnit" size="large">
+        <Button
+          onClick={_onClick}
+          className="Bottom-searchBarUnit"
+          size="large"
+        >
           Search
         </Button>
       </div>

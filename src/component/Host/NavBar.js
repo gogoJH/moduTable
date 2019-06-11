@@ -9,6 +9,7 @@ export default function NavBar() {
   };
 
   return (
+    // please map these Links
     <div className="NavBar">
       <ul className="NavBar-Box">
         <Link

@@ -11,7 +11,7 @@ export default function Events({ location }) {
   const URL = process.env.REACT_APP_URL;
 
   console.log(URL);
-
+  // why have unused hook variables
   const [query, setQuery] = useState("");
   const [date, setDate] = useState({});
   const [guests, setGuests] = useState("");
@@ -24,7 +24,7 @@ export default function Events({ location }) {
       setData(data);
     };
     _getData();
-  }, [URL]);
+  }, [URL]); // what is this URL? as URL updatees, this useEffect re runs??
 
   const InputGroup = Input.Group;
   return (
@@ -43,7 +43,9 @@ export default function Events({ location }) {
       </InputGroup>
 
       <div id="HostList-contents">
-        <h2 style={{ color: "black", marginBottom: "5%" }}>Events available by request</h2>
+        <h2 style={{ color: "black", marginBottom: "5%" }}>
+          Events available by request
+        </h2>
         {data.map(hostData => {
           return <HostListEntry key={hostData.id} data={hostData} />;
         })}

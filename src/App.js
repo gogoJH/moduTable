@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
-import { Main, Events, Event, Account, CreatEvent } from "./pages";
-import App2 from "./component/common/login/App2";
+import { Main, Events, Event, Account, CreatEvent } from "./pages"; // reconsider hirearchy of components and also plz rename Event and Events
+import App2 from "./component/common/login/App2"; // rename plz
 
 class App extends Component {
   render() {

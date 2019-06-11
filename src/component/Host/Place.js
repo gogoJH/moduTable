@@ -1,18 +1,34 @@
 import React, { useState } from "react";
-import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
+import {
+  withGoogleMap,
+  GoogleMap,
+  withScriptjs,
+  InfoWindow,
+  Marker
+} from "react-google-maps";
 import Geocode from "react-geocode";
 const API_KEY = process.env.REACT_APP_google_API_KEY;
-
+// again, this API key will be revealed..later should fix the flow
 Geocode.setApiKey(API_KEY);
 Geocode.enableDebug();
 
 export default function Place() {
-  const [mapPosition, setMapPosition] = useState({ lat: 37.566535, lng: 126.9779692 });
-  const [markerPosition, setMarkerPosition] = useState({ lat: 37.566535, lng: 126.9779692 });
+  const [mapPosition, setMapPosition] = useState({
+    lat: 37.566535, // where is this by the way?
+    lng: 126.9779692
+  });
+  const [markerPosition, setMarkerPosition] = useState({
+    lat: 37.566535,
+    lng: 126.9779692
+  });
 
   const AsyncMap = withScriptjs(
     withGoogleMap(props => (
-      <GoogleMap google={props.google} defaultZoom={19} defaultCenter={mapPosition}>
+      <GoogleMap
+        google={props.google}
+        defaultZoom={19}
+        defaultCenter={mapPosition}
+      >
         <Marker
           google={props.google}
           draggable={true}

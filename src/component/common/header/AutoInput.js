@@ -2,7 +2,7 @@ import React from "react";
 import { withGoogleMap, withScriptjs } from "react-google-maps";
 import Autocomplete from "react-google-autocomplete";
 import { Icon } from "antd";
-const API_KEY = process.env.REACT_APP_google_API_KEY;
+const API_KEY = process.env.REACT_APP_google_API_KEY; // this will not hide your key
 console.log(API_KEY);
 
 export default function AutoInput(props) {
@@ -30,7 +30,10 @@ export default function AutoInput(props) {
           placeholder="Search"
           value={props.city}
         />
-        <Icon type="search" style={{ position: "absolute", right: 10, top: 15 }} />
+        <Icon
+          type="search"
+          style={{ position: "absolute", right: 10, top: 15 }}
+        />
       </div>
     ))
   );
